@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const apps = [
   { name: "Console", icon: "🧾", link: "/console", description: "Central dashboard for your Zerodha account" },
@@ -10,8 +11,10 @@ const apps = [
 ];
 
 const Apps = () => {
+  const navigate = useNavigate();
+
   const handleAppClick = (app) => {
-    window.location.href = app.link;
+    navigate(app.link);
   };
 
   return (
@@ -21,8 +24,8 @@ const Apps = () => {
 
       <div className="apps-grid">
         {apps.map((app) => (
-          <div 
-            key={app.name} 
+          <div
+            key={app.name}
             onClick={() => handleAppClick(app)}
             className="app-card"
             style={{ cursor: "pointer" }}
