@@ -15,13 +15,15 @@
         {
             "source": "/dashboard",
             "destination": {
-                "service": "dashboard"
+                "service": "dashboard",
+                "path": "/"
             }
         },
         {
             "source": "/dashboard/(.*)",
             "destination": {
-                "service": "dashboard"
+                "service": "dashboard",
+                "path": "/$1"
             }
         },
         {
