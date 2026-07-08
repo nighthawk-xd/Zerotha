@@ -13,6 +13,12 @@
     },
     "rewrites": [
         {
+            "source": "/dashboard",
+            "destination": {
+                "service": "dashboard"
+            }
+        },
+        {
             "source": "/dashboard/(.*)",
             "destination": {
                 "service": "dashboard"
