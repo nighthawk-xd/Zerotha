@@ -1,4 +1,4 @@
-# Zerodha Clone Project
+# Zerodha Project
 
 This repository contains a full-stack web application inspired by a trading and investing platform. It is structured as a modern Monorepo containing three core modules:
 
