@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const NAME_REGEX = /^[a-zA-Z\s'.\-]+$/;
+const NAME_REGEX = /^[a-zA-Z\s'.-]+$/;
 
 const validators = {
     name: (v) => {
@@ -103,7 +103,7 @@ function SignUp() {
             }
             localStorage.setItem('token', data.token);
             localStorage.setItem('user', JSON.stringify(data.user));
-            window.location.href = `http://localhost:3001/?token=${encodeURIComponent(data.token)}&user=${encodeURIComponent(JSON.stringify(data.user))}`;
+            window.location.href = `${process.env.REACT_APP_DASHBOARD_URL || '/dashboard'}?token=${encodeURIComponent(data.token)}&user=${encodeURIComponent(JSON.stringify(data.user))}`;
         } catch (err) { setError(err.message); }
         finally { setLoading(false); }
     };

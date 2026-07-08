@@ -21,7 +21,7 @@ if (tokenFromUrl) {
 // Token gate — redirect to frontend login if no token
 const token = localStorage.getItem("token");
 if (!token) {
-  window.location.href = "http://localhost:3000/login";
+  window.location.href = process.env.REACT_APP_FRONTEND_URL ? `${process.env.REACT_APP_FRONTEND_URL}/login` : "/login";
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

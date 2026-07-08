@@ -62,7 +62,7 @@ function Login() {
             }
             localStorage.setItem('token', data.token);
             localStorage.setItem('user', JSON.stringify(data.user));
-            window.location.href = `http://localhost:3001/?token=${encodeURIComponent(data.token)}&user=${encodeURIComponent(JSON.stringify(data.user))}`;
+            window.location.href = `${process.env.REACT_APP_DASHBOARD_URL || '/dashboard'}?token=${encodeURIComponent(data.token)}&user=${encodeURIComponent(JSON.stringify(data.user))}`;
         } catch (err) { setError(err.message); }
         finally { setLoading(false); }
     };

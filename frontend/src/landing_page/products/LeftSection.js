@@ -15,14 +15,14 @@ function LeftSection({
     
     // Product-specific routes
     const productRoutes = {
-      "Kite": "http://localhost:3001",
-      "Coin": "http://localhost:3001/coin",
-      "Varsity": "http://localhost:3001/varsity",
-      "Console": "http://localhost:3001/console",
-      "Kite Connect API": "http://localhost:3001/kite-connect",
+      "Kite": `${process.env.REACT_APP_DASHBOARD_URL || '/dashboard'}`,
+      "Coin": `${process.env.REACT_APP_DASHBOARD_URL || '/dashboard'}/coin`,
+      "Varsity": `${process.env.REACT_APP_DASHBOARD_URL || '/dashboard'}/varsity`,
+      "Console": `${process.env.REACT_APP_DASHBOARD_URL || '/dashboard'}/console`,
+      "Kite Connect API": `${process.env.REACT_APP_DASHBOARD_URL || '/dashboard'}/kite-connect`,
     };
     
-    const targetRoute = productRoutes[productName] || "http://localhost:3001";
+    const targetRoute = productRoutes[productName] || `${process.env.REACT_APP_DASHBOARD_URL || '/dashboard'}`;
     
     if (token) {
       window.location.href = targetRoute;

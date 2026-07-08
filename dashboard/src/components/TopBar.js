@@ -5,7 +5,7 @@ import Menu from "./Menu";
 const handleLogout = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("user");
-  window.location.href = "http://localhost:3000/login";
+  window.location.href = process.env.REACT_APP_FRONTEND_URL ? `${process.env.REACT_APP_FRONTEND_URL}/login` : "/login";
 };
 
 const TopBar = () => {
