@@ -1,0 +1,81 @@
+{
+    "services": {
+        "frontend": {
+            "root": "frontend/"
+        },
+        "dashboard": {
+            "root": "dashboard/"
+        },
+        "backend": {
+            "root": "backend/"
+        }
+    },
+    "rewrites": [
+        {
+            "source": "/dashboard/(.*)",
+            "destination": {
+                "service": "dashboard"
+            }
+        },
+        {
+            "source": "/signup",
+            "destination": {
+                "service": "backend"
+            }
+        },
+        {
+            "source": "/login",
+            "destination": {
+                "service": "backend"
+            }
+        },
+        {
+            "source": "/me",
+            "destination": {
+                "service": "backend"
+            }
+        },
+        {
+            "source": "/account",
+            "destination": {
+                "service": "backend"
+            }
+        },
+        {
+            "source": "/balance",
+            "destination": {
+                "service": "backend"
+            }
+        },
+        {
+            "source": "/holdings",
+            "destination": {
+                "service": "backend"
+            }
+        },
+        {
+            "source": "/orders",
+            "destination": {
+                "service": "backend"
+            }
+        },
+        {
+            "source": "/positions",
+            "destination": {
+                "service": "backend"
+            }
+        },
+        {
+            "source": "/fund-transactions",
+            "destination": {
+                "service": "backend"
+            }
+        },
+        {
+            "source": "/(.*)",
+            "destination": {
+                "service": "frontend"
+            }
+        }
+    ]
+}
