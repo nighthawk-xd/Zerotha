@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Menu = () => {
+  const navigate = useNavigate();
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
@@ -24,12 +25,12 @@ const Menu = () => {
   };
 
   const handleProfile = () => {
-    window.location.href = "/profile";
+    navigate("/profile");
     setIsProfileDropdownOpen(false);
   };
 
   const handleHelp = () => {
-    window.location.href = "/support";
+    navigate("/support");
     setIsProfileDropdownOpen(false);
   };
 
@@ -37,7 +38,7 @@ const Menu = () => {
     const confirmed = window.confirm(
       "Are you sure you want to delete your account? This action cannot be undone and will permanently delete all your data including holdings, positions, orders, and funds."
     );
-    
+
     if (!confirmed) return;
 
     setIsDeleting(true);
@@ -181,8 +182,8 @@ const Menu = () => {
               <div className="dropdown-item" onClick={handleLogout}>
                 Logout
               </div>
-              <div 
-                className="dropdown-item delete-account" 
+              <div
+                className="dropdown-item delete-account"
                 onClick={handleDeleteAccount}
                 style={{ color: "#e53935" }}
               >
